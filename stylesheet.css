@@ -1,142 +1,225 @@
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #02080e;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --link-color: #ffffff;
+  --link-hover-color: #60a5fa;
+  --accent-color: #fcb97d;
+  --secondary-accent: #aaba9e;
+  --nav-hover-bg: rgba(255, 255, 255, 0.1);
+  --font-main: 'Inter', sans-serif;
 }
 
-a {
-  color: #1772d0;
-  text-decoration: none;
-}
-
-a:focus,
-a:hover {
-  color: #f09228;
-  text-decoration: none;
-}
-
-body,
-td,
-th,
-tr,
-p,
-a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-}
-
-strong {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-}
-
-h2 {
+body {
+  background-color: var(--bg-color);
+  /* Subtle gradient background */
+  background-image: radial-gradient(circle at 15% 50%, rgba(23, 114, 208, 0.08), transparent 25%),
+                    radial-gradient(circle at 85% 30%, rgba(252, 185, 125, 0.05), transparent 25%);
+  color: var(--text-color);
+  font-family: var(--font-main);
   margin: 0;
-  font-weight: normal;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 22px;
+  padding: 0;
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
-.papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Main Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+@media (min-width: 800px) {
+  .container {
+    flex-direction: row;
+    padding: 60px 40px;
+    gap: 80px;
+  }
+
+  .sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 60px;
+    height: fit-content;
+  }
+
+  .content {
+    flex-grow: 1;
+    max-width: 720px;
+    padding-top: 10px; 
+  }
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: none;
+}
+
+.nav-item:hover {
+  color: #fff;
+  background-color: var(--nav-hover-bg);
+}
+
+.nav-item.active {
+  color: #02080e;
+  background-color: #fff;
+}
+
+/* Sidebar */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
 }
 
 .name {
-  padding-top: 20px;
-  margin: 0;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+  letter-spacing: -0.02em;
+  color: #fff;
 }
 
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
+.sidebar-links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 25px;
 }
 
-.two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+.icon-link {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
+.icon-link:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
-span.highlight {
-  background-color: #ffffd0;
+/* Content Sections */
+.section {
+  margin-bottom: 50px;
 }
 
-.colored-box {
-    color: black;
-    padding: 20px;
-    display: inline-block;
-    border-radius: 10px;
+.section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.sub-text {
+  color: var(--text-muted);
+  font-size: 0.95em;
+}
+
+/* Highlight Boxes (Cards) */
+.highlight-box {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 3px solid var(--accent-color);
+  transition: background-color 0.2s ease;
+}
+
+.highlight-box:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.highlight-box.skills {
+  border-left-color: var(--secondary-accent);
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.item-title {
+  display: block;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 80px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 30px;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
 }
