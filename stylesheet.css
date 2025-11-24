@@ -145,6 +145,38 @@ a:hover {
   text-decoration: none;
 }
 
+/* WeChat QR Code Popup */
+.wechat-link {
+  position: relative;
+}
+
+.qr-popup {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.qr-popup img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  padding: 8px;
+}
+
+.wechat-link:hover .qr-popup {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Content Sections */
 .section {
   margin-bottom: 50px;
