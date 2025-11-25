@@ -178,6 +178,14 @@ a:hover {
 }
 
 /* Content Sections */
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
 .section {
   margin-bottom: 50px;
 }

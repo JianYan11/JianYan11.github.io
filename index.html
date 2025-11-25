@@ -32,54 +32,130 @@
       <main class="content">
         <!-- Navigation Bar -->
         <nav class="nav-bar">
-            <a href="#" class="nav-item active">Home</a>
-            <a href="#projects" class="nav-item">Projects</a>
-            <a href="#blog" class="nav-item">Blog</a>
-            <a href="#deepdive" class="nav-item">Deepdive</a>
+            <a href="#" class="nav-item active" data-section="home">Home</a>
+            <a href="#projects" class="nav-item" data-section="projects">Projects</a>
+            <a href="#blog" class="nav-item" data-section="blog">Blog</a>
+            <a href="#deepdive" class="nav-item" data-section="deepdive">Deepdive</a>
         </nav>
 
-        <section class="section intro fade-in">
-          <p>
-            Hi! I'm a junior undergraduate student in Electrical Engineering at the <a href="https://zhantianyou.bjtu.edu.cn/english/index.htm">Zhan Tianyou Honors College</a> in Beijing, enrolled in a <b>4+4 integrated B.S. + Ph.D. program</b>. I will complete my doctoral studies at the <a href="http://en.eie.bjtu.edu.cn/">School of Electronic and Information Engineering</a>, Beijing Jiaotong University.
-          </p>
-          <p>
-            My current research interests are in <b>AI for Medicine</b> and <b>(multi)Agents</b>, while I also maintain a strong enthusiasm for mathematics and physics. I am fluent in English, German, and Chinese.
-          </p>
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+          <section class="section intro fade-in">
+            <p>
+              Hi! I'm a junior undergraduate student in Electrical Engineering at the <a href="https://zhantianyou.bjtu.edu.cn/english/index.htm">Zhan Tianyou Honors College</a> in Beijing, enrolled in a <b>4+4 integrated B.S. + Ph.D. program</b>. I will complete my doctoral studies at the <a href="http://en.eie.bjtu.edu.cn/">School of Electronic and Information Engineering</a>, Beijing Jiaotong University.
+            </p>
+            <p>
+              My current research interests are in <b>AI for Medicine</b> and <b>(multi)Agents</b>, while I also maintain a strong enthusiasm for mathematics and physics. I am fluent in English, German, and Chinese.
+            </p>
+          </section>
+
+          <section class="section fade-in" style="animation-delay: 0.1s;">
+            <div class="highlight-box">
+              <h2>Awards</h2>
+              <div class="item">
+                <p>
+                  国家奖学金 / National Scholarship<br>
+                  物理竞赛省奖 / Provincial Award in Physics Competition<br>
+                  钢琴十级 / Level 10 Certificate in Piano
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section fade-in" style="animation-delay: 0.2s;">
+            <div class="highlight-box skills">
+              <h2>Skills</h2>
+              <div class="item">
+                <span class="item-title">Learn Fast / 快速学习</span>
+                <p>
+                  Applying Richard Hamming's learning methodology, I have systematically mastered diverse fields including microeconomics, game theory, psychology, mathematics, and computer science, and can flexibly apply this knowledge across domains. Additionally, I maintain excellent physical fitness and successfully passed the 2023 pilot selection program.<br>
+                  <span class="sub-text">运用理查德·汉明的学习方法，系统掌握微观经济学、博弈论、心理学、数学、计算机科学等多个领域的知识，并能灵活跨领域应用。同时具备出色的身体素质，曾通过2023年飞行员选拔。</span>
+                </p>
+              </div>
+              <div class="item">
+                <span class="item-title">Solving Problems / 问题解决</span>
+                <p>
+                  Multiple participation in hackathons, addressing real-world industry challenges and delivering practical solutions.<br>
+                  <span class="sub-text">多次参加黑客松，解决业界真实问题，提供实用解决方案。</span><br>
+                  Assisted a biomedical unicorn company in designing core cell imaging algorithms, showcased at the <a href="https://www.hicool.com/">HICOOL</a> roadshow.<br>
+                  <span class="sub-text">曾帮助生物医学独角兽公司设计核心细胞成像算法，并在<a href="https://www.hicool.com/">HICOOL</a>路演中展出。</span>
+                </p>
+              </div>
+            </div>
+          </section>
         </section>
 
-        <section class="section fade-in" style="animation-delay: 0.1s;">
-          <div class="highlight-box">
-            <h2>Awards</h2>
-            <div class="item">
-              <p>
-                国家奖学金 / National Scholarship<br>
-                物理竞赛省奖 / Provincial Award in Physics Competition<br>
-                钢琴十级 / Level 10 Certificate in Piano
-              </p>
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+          <section class="section fade-in">
+            <h2>Projects</h2>
+            <div class="highlight-box">
+              <div class="item">
+                <span class="item-title">SEMI-DETR</span>
+                <p>
+                  A project about DEMI-DETR for ionogram target detection.<br>
+                  <span class="sub-text">关于DEMI-DETR用于频高图目标检测的项目</span><br>
+                  <a href="https://github.com/JianYan11/SEMI-DETR" target="_blank">View on GitHub →</a>
+                </p>
+              </div>
             </div>
-          </div>
+            <div class="highlight-box" style="margin-top: 20px;">
+              <div class="item">
+                <span class="item-title">More Projects Coming Soon</span>
+                <p>
+                  I'm working on several exciting projects related to AI for Medicine and Multi-Agent Systems. Check back soon for updates!
+                </p>
+              </div>
+            </div>
+          </section>
         </section>
 
-        <section class="section fade-in" style="animation-delay: 0.2s;">
-          <div class="highlight-box skills">
-            <h2>Skills</h2>
-            <div class="item">
-              <span class="item-title">Learn Fast / 快速学习</span>
-              <p>
-                Applying Richard Hamming's learning methodology, I have systematically mastered diverse fields including microeconomics, game theory, psychology, mathematics, and computer science, and can flexibly apply this knowledge across domains. Additionally, I maintain excellent physical fitness and successfully passed the 2023 pilot selection program.<br>
-                <span class="sub-text">运用理查德·汉明的学习方法，系统掌握微观经济学、博弈论、心理学、数学、计算机科学等多个领域的知识，并能灵活跨领域应用。同时具备出色的身体素质，曾通过2023年飞行员选拔。</span>
-              </p>
+        <!-- Blog Section -->
+        <section id="blog" class="content-section">
+          <section class="section fade-in">
+            <h2>Blog</h2>
+            <div class="highlight-box">
+              <div class="item">
+                <span class="item-title">Welcome to My Blog</span>
+                <p>
+                  Here I'll share my thoughts on AI, research, learning methodologies, and various technical topics.<br>
+                  <span class="sub-text">在这里我将分享关于AI、研究、学习方法论和各种技术主题的思考。</span>
+                </p>
+              </div>
             </div>
-            <div class="item">
-              <span class="item-title">Solving Problems / 问题解决</span>
-              <p>
-                Multiple participation in hackathons, addressing real-world industry challenges and delivering practical solutions.<br>
-                <span class="sub-text">多次参加黑客松，解决业界真实问题，提供实用解决方案。</span><br>
-                Assisted a biomedical unicorn company in designing core cell imaging algorithms, showcased at the <a href="https://www.hicool.com/">HICOOL</a> roadshow.<br>
-                <span class="sub-text">曾帮助生物医学独角兽公司设计核心细胞成像算法，并在<a href="https://www.hicool.com/">HICOOL</a>路演中展出。</span>
-              </p>
+            <div class="highlight-box" style="margin-top: 20px;">
+              <div class="item">
+                <span class="item-title">Posts Coming Soon</span>
+                <p>
+                  Stay tuned for blog posts about my research journey, technical insights, and learning experiences!
+                </p>
+              </div>
             </div>
-          </div>
+          </section>
+        </section>
+
+        <!-- Deepdive Section -->
+        <section id="deepdive" class="content-section">
+          <section class="section fade-in">
+            <h2>Deepdive</h2>
+            <div class="highlight-box">
+              <div class="item">
+                <span class="item-title">Technical Deep Dives</span>
+                <p>
+                  In-depth explorations of technical concepts, algorithms, and research topics that interest me.<br>
+                  <span class="sub-text">深入探索我感兴趣的技术概念、算法和研究主题。</span>
+                </p>
+              </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 20px;">
+              <div class="item">
+                <span class="item-title">Content Coming Soon</span>
+                <p>
+                  Detailed technical articles and deep dives into complex topics will be published here. Check back soon!
+                </p>
+              </div>
+            </div>
+          </section>
         </section>
 
         <footer class="fade-in" style="animation-delay: 0.3s;">
@@ -90,5 +166,56 @@
         </footer>
       </main>
     </div>
+
+    <script>
+      // Navigation functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.content-section');
+
+        // Handle navigation clicks
+        navItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetSection = this.getAttribute('data-section');
+
+            // Update active nav item
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+
+            // Show/hide sections
+            sections.forEach(section => {
+              section.classList.remove('active');
+            });
+            document.getElementById(targetSection).classList.add('active');
+
+            // Update URL hash
+            if (targetSection === 'home') {
+              history.pushState(null, null, '#');
+            } else {
+              history.pushState(null, null, '#' + targetSection);
+            }
+          });
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function() {
+          const hash = window.location.hash.substring(1) || 'home';
+          const targetNav = document.querySelector(`[data-section="${hash}"]`);
+          if (targetNav) {
+            targetNav.click();
+          }
+        });
+
+        // Handle initial hash
+        const initialHash = window.location.hash.substring(1);
+        if (initialHash) {
+          const targetNav = document.querySelector(`[data-section="${initialHash}"]`);
+          if (targetNav) {
+            targetNav.click();
+          }
+        }
+      });
+    </script>
   </body>
 </html>
