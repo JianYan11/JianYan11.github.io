@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybernetics: The Art of Steering | Deepdive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Cybernetics</h1>
+            <p class="subtitle">Control and Communication in the Animal and the Machine</p>
+            <a href="../index.html" class="back-link">← Back to Main Site</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Introduction -->
+        <section id="intro">
+            <h2>What is Cybernetics?</h2>
+            <p>
+                Cybernetics is a transdisciplinary approach for exploring regulatory systems—their structures, constraints, and possibilities. 
+                It is relevant to the study of mechanical, physical, biological, cognitive, and social systems.
+            </p>
+            <p>
+                The term comes from the Ancient Greek <strong>"kubernetike"</strong>, meaning "the art of steering" or "governance". 
+                Just as a steersman adjusts the rudder to stay on course despite changing winds and currents, cybernetic systems use 
+                <strong>feedback</strong> to maintain stability and achieve goals.
+            </p>
+        </section>
+
+        <!-- History -->
+        <section id="history">
+            <h2>History & Origins</h2>
+            <p>
+                While the concepts of feedback and control date back to ancient times (e.g., Ktesibios's water clock), modern cybernetics 
+                was solidified in the 1940s.
+            </p>
+            <h3>Norbert Wiener</h3>
+            <p>
+                The field was formally defined by <strong>Norbert Wiener</strong> in his seminal 1948 book, 
+                <em>"Cybernetics: Or Control and Communication in the Animal and the Machine"</em>. Wiener, a mathematician/philosopher, 
+                recognized that the principles governing control in complex machines (like anti-aircraft guns) were strikingly similar 
+                to those in biological nervous systems.
+            </p>
+            <h3>The Macy Conferences</h3>
+            <p>
+                Between 1946 and 1953, a group of scholars from diverse fields—mathematics, psychology, anthropology, and engineering—gathered 
+                in New York for the <strong>Macy Conferences</strong>. These meetings were the crucible where cybernetics was forged, 
+                bringing together giants like John von Neumann, Warren McCulloch, and Margaret Mead to develop a unified theory of the mind and machine.
+            </p>
+        </section>
+
+        <!-- Core Concepts -->
+        <section id="concepts">
+            <h2>Core Concepts</h2>
+            
+            <h3>Feedback Loops</h3>
+            <p>
+                The heart of cybernetics. A system's output is "fed back" as input, creating a loop.
+            </p>
+            <ul>
+                <li><strong>Negative Feedback:</strong> Counteracts change to maintain stability (Homeostasis). Example: A thermostat or the human body regulating temperature.</li>
+                <li><strong>Positive Feedback:</strong> Amplifies change, leading to exponential growth or runaway effects. Example: Audio feedback or viral trends.</li>
+            </ul>
+
+            <h3>Entropy & Information</h3>
+            <p>
+                <strong>Entropy</strong> is a measure of disorder. In cybernetics, systems fight against the natural tendency towards disorder (Second Law of Thermodynamics) 
+                by processing <strong>Information</strong>. 
+            </p>
+            <p>
+                <strong>Claude Shannon's</strong> Information Theory provided the mathematical framework to quantify this. A cybernetic system uses information 
+                to reduce uncertainty and maintain its structure (Negentropy).
+            </p>
+        </section>
+
+        <!-- Modern Applications -->
+        <section id="applications">
+            <h2>Modern Applications</h2>
+            <p>
+                Cybernetics is the ancestor of many modern fields. Its DNA is everywhere:
+            </p>
+            <ul>
+                <li><strong>Artificial Intelligence:</strong> Neural networks and reinforcement learning are fundamentally cybernetic, relying on error correction (feedback) to learn.</li>
+                <li><strong>Robotics:</strong> Autonomous robots use sensor-motor loops to navigate and interact with the world.</li>
+                <li><strong>Biology & Medicine:</strong> Understanding the brain as an information processing system; prosthetics that interface with the nervous system.</li>
+                <li><strong>Management & Society:</strong> Organizational cybernetics applies these principles to manage complex companies and economies (e.g., Stafford Beer's Viable System Model).</li>
+            </ul>
+        </section>
+
+        <!-- Advanced Project -->
+        <section id="project">
+            <h2>Advanced Project: Braitenberg Vehicles</h2>
+            <p>
+                Valentino Braitenberg, a neuroanatomist, proposed a series of thought experiments in his book <em>"Vehicles: Experiments in Synthetic Psychology"</em>. 
+                He showed how simple mechanical connections between sensors and motors can yield complex, life-like behaviors like "fear", "aggression", and "love".
+            </p>
+            <p>
+                <strong>Interact with the simulation below.</strong> These "vehicles" have two light sensors connected to two wheels. 
+                By changing how they are wired, we change their "personality".
+            </p>
+
+            <div id="simulation-container">
+                <canvas id="simCanvas" width="800" height="500"></canvas>
+                <div class="instruction">Click on the canvas to add a new Light Source.</div>
+                
+                <div class="controls">
+                    <button id="btn-fear" class="active" onclick="setVehicleType('fear')">Vehicle 2a: "Fear"</button>
+                    <button id="btn-aggression" onclick="setVehicleType('aggression')">Vehicle 2b: "Aggression"</button>
+                    <button id="btn-love" onclick="setVehicleType('love')">Vehicle 3a: "Love"</button>
+                    <button id="btn-explorer" onclick="setVehicleType('explorer')">Vehicle 3b: "Explorer"</button>
+                    <button onclick="resetSim()">Reset Simulation</button>
+                </div>
+                <div id="behavior-desc" style="margin-top: 15px; font-style: italic;">
+                    "Fear": Sensors connected directly to same-side wheels. Gets faster closer to light, turning away from it.
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="js/braitenberg.js"></script>
+</body>
+</html>
