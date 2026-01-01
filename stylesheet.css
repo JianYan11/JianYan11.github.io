@@ -219,6 +219,47 @@ a:hover {
   border-left-color: var(--secondary-accent);
 }
 
+.highlight-box.education {
+  border-left-color: #8bb8ff;
+}
+
+.education-grid {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+
+.education-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.education-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  flex: 0 0 auto;
+}
+
+.education-text .item-title {
+  margin: 0;
+}
+
 .item {
   margin-bottom: 20px;
 }
