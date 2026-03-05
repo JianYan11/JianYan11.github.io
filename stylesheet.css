@@ -1,28 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Inspired by Dan Koe / minimal-bold personal sites. No vibecoding defaults. */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 :root {
-  --bg-color: #02080e;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --text-color: #e2e8f0;
-  --text-muted: #94a3b8;
-  --link-color: #ffffff;
-  --link-hover-color: #60a5fa;
-  --accent-color: #fcb97d;
-  --secondary-accent: #aaba9e;
-  --nav-hover-bg: rgba(255, 255, 255, 0.1);
-  --font-main: 'Inter', sans-serif;
+  --bg-color: #0a0a0a;
+  --card-bg: transparent;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --text-color: #e4e4e7;
+  --text-muted: #71717a;
+  --link-color: #fafafa;
+  --link-hover-color: #a1a1aa;
+  --accent-color: #e4e4e7;
+  --nav-hover-bg: transparent;
+  --font-display: 'Syne', sans-serif;
+  --font-main: 'IBM Plex Sans', sans-serif;
 }
 
 body {
   background-color: var(--bg-color);
-  /* Subtle gradient background */
-  background-image: radial-gradient(circle at 15% 50%, rgba(23, 114, 208, 0.08), transparent 25%),
-                    radial-gradient(circle at 85% 30%, rgba(252, 185, 125, 0.05), transparent 25%);
   color: var(--text-color);
   font-family: var(--font-main);
   margin: 0;
   padding: 0;
-  line-height: 1.7;
+  line-height: 1.65;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -70,32 +69,30 @@ a:hover {
   }
 }
 
-/* Navigation Bar */
+/* Navigation — minimal, text-first (Dan Koe style) */
 .nav-bar {
   display: flex;
-  gap: 8px;
-  margin-bottom: 40px;
+  gap: 24px;
+  margin-bottom: 48px;
   flex-wrap: wrap;
 }
 
 .nav-item {
   color: var(--text-muted);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.95rem;
+  padding: 0;
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
   border-bottom: none;
 }
 
 .nav-item:hover {
-  color: #fff;
-  background-color: var(--nav-hover-bg);
+  color: var(--link-color);
 }
 
 .nav-item.active {
-  color: #02080e;
-  background-color: #fff;
+  color: var(--link-color);
 }
 
 /* Sidebar */
@@ -106,24 +103,25 @@ a:hover {
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
-  border-radius: 12px;
+  width: 140px;
+  height: 140px;
+  border-radius: 0;
   object-fit: cover;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
+  border: 1px solid var(--card-border);
+  transition: border-color 0.2s ease;
 }
 
 .profile-img:hover {
-  transform: scale(1.02);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .name {
-  font-size: 2.2rem;
+  font-family: var(--font-display);
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
   margin-top: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: #fff;
 }
 
@@ -177,6 +175,17 @@ a:hover {
   visibility: visible;
 }
 
+/* Hero tagline — Dan Koe style: one bold line first */
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
 /* Content Sections */
 .content-section {
   display: none;
@@ -191,9 +200,11 @@ a:hover {
 }
 
 .section h2 {
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
   margin: 0 0 20px 0;
   font-weight: 600;
+  letter-spacing: -0.02em;
   color: #fff;
 }
 
@@ -202,25 +213,25 @@ a:hover {
   font-size: 0.95em;
 }
 
-/* Highlight Boxes (Cards) */
+/* Cards — brutalist/minimal: border, no fill, no rounded (less vibecoding) */
 .highlight-box {
   background-color: var(--card-bg);
-  border-radius: 12px;
-  padding: 25px;
-  border-left: 3px solid var(--accent-color);
-  transition: background-color 0.2s ease;
+  border-radius: 0;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--card-border);
+  transition: border-color 0.2s ease;
 }
 
 .highlight-box:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .highlight-box.skills {
-  border-left-color: var(--secondary-accent);
+  border-left: none;
 }
 
 .highlight-box.education {
-  border-left-color: #8bb8ff;
+  border-left: none;
 }
 
 .education-grid {
@@ -233,17 +244,22 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
   width: 100%;
   min-width: 0;
   flex: 0 0 auto;
 }
 
 .education-item:hover {
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.education-grid .education-item:last-child {
+  border-bottom: none;
 }
 
 .education-logo {

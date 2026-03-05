@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIT 6.031 — Software Construction | Deepdive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="dd-header">
+            <h1>MIT 6.031</h1>
+            <p class="dd-subtitle">Software Construction — Static Checking & TypeScript</p>
+            <a href="../index.html" class="back-link">← Back</a>
+        </div>
+        
+        <!-- Introduction -->
+        <section id="intro">
+            <h2>Why 6.031?</h2>
+            <p>
+                <strong>6.031 Software Construction</strong> is MIT's course on building correct, understandable, and evolvable software. 
+                I followed the <strong>2021 (SP21)</strong> and <strong>2022 (SP22)</strong> offerings to ground my programming in static checking, 
+                types, and the "big three" properties of good software. This Deep Dive summarizes what I took from the first two readings: 
+                Static Checking (SP21) and Basic TypeScript (SP22).
+            </p>
+            <p>
+                <span class="sub-text">我系统学习了 MIT 6.031 的 2021 与 2022 版本，重点放在静态检查与 TypeScript 基础上，作为写好软件的第一块基石。</span>
+            </p>
+        </section>
+
+        <!-- The Big Three -->
+        <section id="big-three">
+            <h2>The Big Three Properties of Good Software</h2>
+            <p>
+                The course is built around three goals every program should aim for:
+            </p>
+            <table>
+                <thead>
+                    <tr><th>Property</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Safe from bugs</strong></td><td>Correct today and correct in the unknown future.</td></tr>
+                    <tr><td><strong>Easy to understand</strong></td><td>Communicating clearly with future programmers, including future you.</td></tr>
+                    <tr><td><strong>Ready for change</strong></td><td>Designed to accommodate change without rewriting.</td></tr>
+                </tbody>
+            </table>
+            <p>
+                Static checking is the first major tool the course uses to make code <strong>safe from bugs</strong>.
+            </p>
+        </section>
+
+        <!-- Static Checking (SP21 Reading 1) -->
+        <section id="static-checking">
+            <h2>Static Checking (SP21 — Reading 1)</h2>
+            <p>
+                <a href="https://web.mit.edu/6.031/www/sp21/classes/01-static-checking/" target="_blank" rel="noopener">Reading 1: Static Checking</a> 
+                introduces <strong>types</strong> and the difference between static, dynamic, and no checking.
+            </p>
+            
+            <h3>Types</h3>
+            <p>
+                A <strong>type</strong> is a set of values plus the operations that can be performed on them. 
+                In statically-typed languages (e.g. Java, TypeScript), variable types are known at compile time, so the compiler can catch 
+                many errors before the program runs—such as <code>"5" * "6"</code> (multiplying two strings).
+            </p>
+            
+            <h3>Three Kinds of Checking</h3>
+            <ul>
+                <li><strong>Static checking</strong>: Bugs found before the program runs (wrong types, wrong number of arguments, misspelled names, syntax errors).</li>
+                <li><strong>Dynamic checking</strong>: Bugs found when the code runs (null reference, index out of range, divide-by-zero when the divisor is only sometimes zero).</li>
+                <li><strong>No checking</strong>: The language doesn’t help; you get wrong answers or undefined behavior.</li>
+            </ul>
+            <p>
+                Catching bugs statically is better than dynamically, and dynamically is better than not at all. 
+                Static typing prevents a large class of bugs: applying an operation to the wrong types of arguments.
+            </p>
+            <p>
+                The reading also warns about <strong>primitive types not being true numbers</strong>: integer division truncation, integer overflow, 
+                and floating-point special values (<code>NaN</code>, <code>Infinity</code>) that can hide errors.
+            </p>
+        </section>
+
+        <!-- Basic TypeScript (SP22 Reading 2) -->
+        <section id="typescript">
+            <h2>Basic TypeScript (SP22 — Reading 2)</h2>
+            <p>
+                <a href="https://web.mit.edu/6.031/www/sp22/classes/02-basic-typescript/#variable_declarations" target="_blank" rel="noopener">Reading 2: Basic TypeScript</a> 
+                moves from Python to TypeScript and introduces <strong>snapshot diagrams</strong>, variable declarations, and mutability.
+            </p>
+            
+            <h3>Variable declarations</h3>
+            <p>
+                TypeScript uses <code>let</code> for reassignable variables and <code>const</code> for unreassignable references. 
+                Types can be annotated explicitly, e.g. <code>let n: number = 1;</code> and <code>const s: string = "hello";</code>. 
+                Snapshot diagrams represent runtime state: the stack (methods and local variables) and the heap (objects). 
+                Double borders denote immutable values; double arrows denote unreassignable references.
+            </p>
+            
+            <h3>Mutating values vs. reassigning variables</h3>
+            <ul>
+                <li><strong>Reassignment</strong>: Changing where a variable’s arrow points (e.g. <code>s = s + "b"</code>).</li>
+                <li><strong>Mutation</strong>: Changing the contents of a mutable object (e.g. <code>arr.push("b")</code>).</li>
+            </ul>
+            <p>
+                Strings are <strong>immutable</strong>; arrays are <strong>mutable</strong>. 
+                <code>const</code> only makes the reference unreassignable—you can still have <code>const arr: Array&lt;string&gt; = ["a"]</code> 
+                and then <code>arr.push("b")</code>. The distinction between mutability and reassignability is central to writing code that stays safe from bugs.
+            </p>
+            
+            <h3>Arrays, Maps, and Sets</h3>
+            <p>
+                TypeScript’s <code>Array</code> is like Python’s list; <code>Map</code> is like a dictionary; <code>Set</code> is an unordered collection of unique values. 
+                The reading maps common operations (e.g. <code>lst.length</code>, <code>lst.push(e)</code>, <code>lst.includes(e)</code>) to their Python equivalents, 
+                which helps when transitioning from Python to TypeScript.
+            </p>
+        </section>
+
+        <!-- Takeaways -->
+        <section id="takeaways">
+            <h2>Takeaways</h2>
+            <ul>
+                <li>Good software is <strong>safe from bugs</strong>, <strong>easy to understand</strong>, and <strong>ready for change</strong>.</li>
+                <li>Static typing and static checking catch many errors at compile time; prefer them when building larger systems.</li>
+                <li>Use snapshot diagrams to reason about references, mutability, and immutability.</li>
+                <li>Understand the difference between reassigning a variable and mutating a value—and when to use <code>const</code> vs <code>let</code>.</li>
+            </ul>
+        </section>
+
+        <!-- References -->
+        <section id="references">
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://web.mit.edu/6.031/www/sp21/classes/01-static-checking/" target="_blank" rel="noopener">6.031 SP21 — Reading 1: Static Checking</a></li>
+                <li><a href="https://web.mit.edu/6.031/www/sp22/classes/02-basic-typescript/#variable_declarations" target="_blank" rel="noopener">6.031 SP22 — Reading 2: Basic TypeScript (Variable declarations)</a></li>
+                <li><a href="https://web.mit.edu/6.031/www/sp22/" target="_blank" rel="noopener">6.031 Software Construction (SP22) — Course site</a></li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>

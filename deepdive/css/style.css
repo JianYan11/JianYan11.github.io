@@ -1,149 +1,204 @@
-/* Global Styles */
+/* Aligned with main site: dark, minimal, Syne + IBM Plex Sans */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --background-color: #f8f9fa;
-    --text-color: #333;
-    --card-bg: #fff;
-    --accent-color: #28a745;
+  --bg-color: #0a0a0a;
+  --text-color: #e4e4e7;
+  --text-muted: #71717a;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --link-color: #fafafa;
+  --link-hover: #a1a1aa;
+  --font-display: 'Syne', sans-serif;
+  --font-main: 'IBM Plex Sans', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.65;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--link-hover);
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 60px 0;
-    background: linear-gradient(135deg, #007bff, #00d2ff);
-    color: white;
-    margin-bottom: 40px;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* Minimal header: no gradient, no big block */
+.dd-header {
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--card-border);
 }
 
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    font-weight: 700;
+.dd-header h1 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 6px 0;
 }
 
-header .subtitle {
-    font-size: 1.2em;
-    opacity: 0.9;
+.dd-header .dd-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 20px 0;
 }
 
-.back-link {
-    display: inline-block;
-    margin-top: 20px;
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+.dd-header .back-link {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  border: none;
 }
 
-.back-link:hover {
-    color: white;
+.dd-header .back-link:hover {
+  color: var(--link-color);
 }
 
-/* Sections */
+/* Sections: border-bottom only, no cards/shadows */
 section {
-    background: var(--card-bg);
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--card-border);
 }
 
-section:hover {
-    transform: translateY(-5px);
+section:last-of-type {
+  border-bottom: none;
 }
 
 h2 {
-    color: var(--primary-color);
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 16px 0;
 }
 
 h3 {
-    color: var(--secondary-color);
-    margin-top: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 28px 0 10px 0;
 }
 
 p {
-    margin-bottom: 15px;
+  margin: 0 0 14px 0;
 }
 
 ul {
-    margin-bottom: 15px;
-    padding-left: 20px;
+  margin: 0 0 14px 0;
+  padding-left: 20px;
 }
 
 li {
-    margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-/* Simulation Area */
+.sub-text {
+  color: var(--text-muted);
+  font-size: 0.95em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+table th,
+table td {
+  border: 1px solid var(--card-border);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+table th {
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  font-size: 0.9em;
+  border: 1px solid var(--card-border);
+}
+
+/* Braitenberg simulation: dark, minimal */
 #simulation-container {
-    text-align: center;
-    background: #222;
-    padding: 20px;
-    border-radius: 12px;
-    color: white;
+  margin-top: 20px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
 }
 
-canvas {
-    background: #000;
-    border-radius: 8px;
-    cursor: crosshair;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+#simulation-container .instruction {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 12px;
 }
 
 .controls {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s;
+.controls button {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--card-border);
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-button:hover {
-    background: #0056b3;
-    transform: scale(1.05);
+.controls button:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 
-button.active {
-    background: var(--accent-color);
-    box-shadow: 0 0 10px var(--accent-color);
+.controls button.active {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
 }
 
-.instruction {
-    font-size: 0.9em;
-    color: #aaa;
-    margin-top: 10px;
+#behavior-desc {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+canvas {
+  background: #000;
+  display: block;
+  max-width: 100%;
 }
