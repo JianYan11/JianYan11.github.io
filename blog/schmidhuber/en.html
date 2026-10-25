@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reflections on Jürgen Schmidhuber and how research, engineering, communication, and collaboration shape a scientist’s impact.">
+  <meta name="author" content="Cris Yan">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Earlier than Hinton, Deeper than Kaiming He: Why Did He Keep Missing Out on “Greatness”?">
+  <meta property="og:description" content="A personal essay on Jürgen Schmidhuber, the history of deep learning, and scientific recognition.">
+  <meta property="og:url" content="https://jianyan11.github.io/blog/schmidhuber/en.html">
+  <meta property="og:image" content="https://jianyan11.github.io/blog/schmidhuber/images/schmidhuber-portrait.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-13T16:46:00+08:00">
+  <title>Earlier than Hinton, Deeper than Kaiming He · Jian Yan</title>
+  <link rel="canonical" href="https://jianyan11.github.io/blog/schmidhuber/en.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://jianyan11.github.io/blog/schmidhuber/">
+  <link rel="alternate" hreflang="en" href="https://jianyan11.github.io/blog/schmidhuber/en.html">
+  <link rel="icon" href="../../images/favicon/favicon.ico">
+  <link rel="stylesheet" href="../../stylesheet.css">
+  <link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to article</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="site-name" href="../../">颜简 <span>Jian Yan</span></a>
+      <nav aria-label="Main navigation">
+        <a href="../../#about">About</a>
+        <a href="../../#research">Research</a>
+        <a href="../../#notes">Engineering Notes</a>
+        <a href="../">Blog</a>
+      </nav>
+    </header>
+    <main class="blog-main" id="main">
+      <a class="back-link" href="../">← All posts</a>
+      <article>
+        <header class="post-header">
+          <p class="eyebrow">Deep Learning · People · Personal Essay</p>
+          <h1>Earlier than Hinton, Deeper than Kaiming He: Why Did He Keep Missing Out on “Greatness”?</h1>
+          <div class="post-meta">
+            <span>Cris Yan · Jian Yan</span>
+            <time datetime="2026-05-13T16:46:00+08:00">May 13, 2026</time>
+            <a href="https://mp.weixin.qq.com/s/EJT9sgHMbe2BA7pxEy0wtQ" target="_blank" rel="noopener noreferrer" hreflang="zh-CN">Originally published on WeChat ↗</a>
+          </div>
+          <nav class="language-switch" aria-label="Article language">
+            <a href="./" lang="zh-CN" hreflang="zh-CN">中文</a>
+            <a href="en.html" lang="en" hreflang="en" aria-current="page">English</a>
+          </nav>
+        </header>
+        <div class="post-body">
+          <p>While looking back at the history of deep learning, I kept coming across a name I had barely heard before: Jürgen <strong>Schmidhuber</strong>. He invented LSTM. He used GPUs to train <strong>deep convolutional neural networks</strong> before Hinton—the “godfather of deep learning”—Ilya, and Alex did. He also made extensive use of residual-like architectures before Kaiming He, training neural networks with <strong>more than a hundred layers</strong>. So why has he not become a godfather figure enshrined in the deep learning pantheon alongside Hinton and Kaiming He?</p>
+          <figure class="portrait">
+            <img src="images/schmidhuber-portrait.jpg" width="489" height="628" alt="Portrait of Jürgen Schmidhuber, from HPCwire’s report on his appointment to lead the KAUST AI Initiative" decoding="async">
+            <figcaption><em>(He certainly looks proud and aloof.)</em></figcaption>
+          </figure>
+          <h2>1. An excessive pursuit of academic rigor.</h2>
+          <p>As a German computer scientist, Schmidhuber places enormous importance on logical rigor. His papers are <strong>highly inspiring</strong> and <strong>forward-looking</strong>. As early as the 1990s, he proposed a precursor to <strong>something resembling an attention mechanism</strong>, albeit without nonlinear activation functions and other elements at the time. His ideas inspired a generation of deep learning researchers, including Ilya and the founders of DeepMind. <strong>Yet</strong>, as a scholar devoted to pure research, he seemed less concerned with the subsequent <strong>engineering implementation</strong> once he had pointed out a promising direction. For example, in <cite>Training Very Deep Networks</cite>, which uses gating mechanisms for residual connections, he proposed a way to train networks a hundred layers deep. But it <strong>did not</strong> make a splash on ImageNet, largely because the gating mechanisms introduced too many parameters, making optimization and training extremely difficult.</p>
+          <figure class="citation-comparison">
+            <img src="images/citation-comparison-1.png" width="1080" height="237" alt="Screenshot from the original post showing 3,634 citations for Training very deep networks" loading="lazy" decoding="async">
+            <img src="images/citation-comparison-2.png" width="1080" height="235" alt="Screenshot from the original post showing 320,031 citations for Deep residual learning for image recognition" loading="lazy" decoding="async">
+            <figcaption><em>(Their citation counts differ by almost a factor of a hundred.)</em></figcaption>
+          </figure>
+          <h2>2. Exceptional ability, coupled with an aloof personality.</h2>
+          <p>Supremely confident, Schmidhuber did not see fit to band together with the “big three” of deep learning—Hinton, LeCun, and Bengio—even when neural networks were at their lowest ebb. Instead, he pursued his research independently within a small European circle. The big three, by contrast, weathered the neural network winter together by citing one another’s papers, securing projects, and engaging in deep discussions.</p>
+          <figure class="portrait">
+            <img src="images/deep-learning-pioneers.jpg" width="800" height="791" alt="Yoshua Bengio, Geoffrey Hinton, and Yann LeCun together" loading="lazy" decoding="async">
+            <figcaption><em>(The big three of deep learning: Hinton, LeCun, and Bengio—HLB.)</em></figcaption>
+          </figure>
+          <h2>3. A lack of storytelling skill.</h2>
+          <p>Hinton and LeCun excel at explaining what AI does to a general audience through <strong>plain language</strong> and analogies. Schmidhuber, on the other hand, tends toward exceptionally <strong>rigorous, mathematical</strong> language. For what is almost the same concept, for instance, Hinton chose the straightforward, intuitive name “<strong>Dropout</strong>,” while Schmidhuber called his work “<strong>Market-based credit assignment in a network of evolving adaptive reinforcement learners</strong>.” From a <strong>communications</strong> standpoint, the latter was practically dead on arrival.</p>
+          <figure>
+            <img src="images/who-invented-deep-learning.jpg" width="286" height="176" alt="Illustration from Schmidhuber’s blog post Who Invented Deep Learning?" loading="lazy" decoding="async">
+            <figcaption><em>(The large graphic Schmidhuber posted on his blog.)</em></figcaption>
+          </figure>
+          <p>Schmidhuber is undoubtedly a great scholar in deep learning. But history and society tend to reward those whose work has the <strong>most direct impact on human progress at the largest scale</strong>. From the breakthrough of AlexNet to that of ResNet, he seems never to have fully understood why the world has not given him the recognition he seeks. Since 2015, he has continued to criticize the big three on Twitter and his blog.</p>
+          <p>This leaves us with a question: how can we contribute as much as possible to human progress? One answer might be to <strong>produce simple, reusable work; express ideas clearly; keep an open mind; and embrace collaboration</strong>. <strong>Ultimately, our value must be reflected in the tangible contributions we make to others.</strong></p>
+          <figure class="portrait">
+            <img src="images/hinton-portrait.jpg" width="500" height="570" alt="Geoffrey Hinton, recipient of the ninth BBVA Frontiers of Knowledge Award in Information and Communication Technologies" loading="lazy" decoding="async">
+          </figure>
+        </div>
+        <div class="post-end">
+          <a href="https://mp.weixin.qq.com/s/EJT9sgHMbe2BA7pxEy0wtQ" target="_blank" rel="noopener noreferrer" hreflang="zh-CN">Read the original on WeChat ↗</a>
+          <a href="./" lang="zh-CN" hreflang="zh-CN">阅读中文版 →</a>
+        </div>
+      </article>
+    </main>
+    <footer><span>Jian Yan · 颜简</span><a href="../">← All posts</a></footer>
+  </div>
+</body>
+</html>

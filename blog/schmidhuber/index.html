@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从 Jürgen Schmidhuber 的经历出发，思考学术贡献、工程实践、表达与合作如何共同塑造影响力。">
+  <meta name="author" content="Cris Yan">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="比Hinton更早，比何恺明更深：他为何数次与“伟大”擦肩而过？">
+  <meta property="og:description" content="关于 Jürgen Schmidhuber、深度学习历史与学术影响力的一篇个人笔记。">
+  <meta property="og:url" content="https://jianyan11.github.io/blog/schmidhuber/">
+  <meta property="og:image" content="https://jianyan11.github.io/blog/schmidhuber/images/schmidhuber-portrait.jpg">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:published_time" content="2026-05-13T16:46:00+08:00">
+  <title>比Hinton更早，比何恺明更深：他为何数次与“伟大”擦肩而过？ · 颜简</title>
+  <link rel="canonical" href="https://jianyan11.github.io/blog/schmidhuber/">
+  <link rel="alternate" hreflang="zh-CN" href="https://jianyan11.github.io/blog/schmidhuber/">
+  <link rel="alternate" hreflang="en" href="https://jianyan11.github.io/blog/schmidhuber/en.html">
+  <link rel="icon" href="../../images/favicon/favicon.ico">
+  <link rel="stylesheet" href="../../stylesheet.css">
+  <link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="site-name" href="../../">颜简 <span>Jian Yan</span></a>
+      <nav aria-label="主导航">
+        <a href="../../#about">关于</a>
+        <a href="../../#research">研究项目</a>
+        <a href="../../#notes">工程笔记</a>
+        <a href="../">博客</a>
+      </nav>
+    </header>
+    <main class="blog-main" id="main">
+      <a class="back-link" href="../">← 全部文章</a>
+      <article>
+        <header class="post-header">
+          <p class="eyebrow">深度学习 · 人物 · 个人笔记</p>
+          <h1>比Hinton更早，比何恺明更深：他为何数次与“伟大”擦肩而过？</h1>
+          <div class="post-meta">
+            <span>Cris Yan · 颜简</span>
+            <time datetime="2026-05-13T16:46:00+08:00">2026年5月13日</time>
+            <a href="https://mp.weixin.qq.com/s/EJT9sgHMbe2BA7pxEy0wtQ" target="_blank" rel="noopener noreferrer">首发于「颜简的学习笔记」↗</a>
+          </div>
+          <nav class="language-switch" aria-label="文章语言">
+            <a href="./" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a>
+            <a href="en.html" lang="en" hreflang="en">English</a>
+          </nav>
+        </header>
+        <div class="post-body">
+          <p>在回顾深度学习的历史时，发现了一个屡屡出现，但此前却鲜有耳闻的名字——Jürgen <strong>Schmidhuber</strong>。他发明了LSTM，不仅先于Hinton（深度学习教父）、Ilya和Alex使用GPU训练<strong>深度卷积神经网络</strong>，还在何恺明（Kaiming He）之前大规模使用类似残差的结构，训练出了超过<strong>百层</strong>的神经网络。可是，为什么他没能成为像Hinton、何恺明那样被供奉在深度学习殿堂的教父级人物呢？</p>
+          <figure class="portrait">
+            <img src="images/schmidhuber-portrait.jpg" width="489" height="628" alt="Jürgen Schmidhuber 的肖像，原文配图来自 HPCwire 的 KAUST AI Initiative 任命报道" decoding="async">
+            <figcaption><em>（哥们看着就很孤傲）</em></figcaption>
+          </figure>
+          <h2>1. 过于追求学术严谨。</h2>
+          <p>作为一名德国计算机科学家，Schmidhuber极其在意逻辑的严密性。他发表的论文<strong>极具启发性</strong>和<strong>前瞻性</strong>，甚至在90年代就提出了<strong>类似注意力机制</strong>的雏形（尽管当时没有非线性激活函数等），启发了包括Ilya和DeepMind创始人在内的一代深度学习科学家。<strong>然而</strong>，作为纯粹的学术专家，他在指明了发展方向之后，并不太在意后续的<strong>工程实现</strong>。比如，他在《Training Very Deep Networks》（使用门控机制来进行残差连接）中提出了训练出百层深度神经网络的方法，但<strong>并没有</strong>在ImageNet上取得轰动（很大原因是门控机制引入了过多参数，使得网络优化变得十分困难，难以训练）。</p>
+          <figure class="citation-comparison">
+            <img src="images/citation-comparison-1.png" width="1080" height="237" alt="原文截图：《Training very deep networks》被引用 3,634 次" loading="lazy" decoding="async">
+            <img src="images/citation-comparison-2.png" width="1080" height="235" alt="原文截图：《Deep residual learning for image recognition》被引用 320,031 次" loading="lazy" decoding="async">
+            <figcaption><em>（两者的引用量几乎相差了100倍）</em></figcaption>
+          </figure>
+          <h2>2. 能力极强且性格孤傲。</h2>
+          <p>极度自信的Schmidhuber，即使在神经网络陷入最低谷时，也不屑于和“深度学习三巨头”（Hinton、LeCun、Bengio）抱团取暖，而是独自一人在欧洲的小圈子里搞研究。相比之下，此时的三巨头则通过互相引用论文、拉项目、深度讨论，一起熬过了神经网络的寒冬。</p>
+          <figure class="portrait">
+            <img src="images/deep-learning-pioneers.jpg" width="800" height="791" alt="Yoshua Bengio、Geoffrey Hinton 与 Yann LeCun 的合影" loading="lazy" decoding="async">
+            <figcaption><em>（深度学习三巨头 史称HLB）</em></figcaption>
+          </figure>
+          <h2>3. 不擅长“讲故事”。</h2>
+          <p>Hinton和LeCun非常擅长用<strong>通俗</strong>的语言、类比的手法，向普通人讲清楚AI在干什么。而Schmidhuber则倾向于使用极其<strong>严谨、数学化</strong>的表达。比如对于几乎同一个概念，Hinton将其命名为直白易懂的“<strong>Dropout</strong>”，而Schmidhuber的命名则是“<strong>Market-based credit assignment in a network of evolving adaptive reinforcement learners</strong>”。显然，后者在<strong>传播学</strong>上已经被判了死刑。</p>
+          <figure>
+            <img src="images/who-invented-deep-learning.jpg" width="286" height="176" alt="Schmidhuber 博客《Who Invented Deep Learning?》中的配图" loading="lazy" decoding="async">
+            <figcaption><em>（Schmidhuber在博客上贴出的大图）</em></figcaption>
+          </figure>
+          <p>Schmidhuber无疑是深度学习领域极其伟大的学者，但历史和社会往往会奖励那些对人类发展进程产生<strong>最直接、最大规模影响</strong>的人。从AlexNet到ResNet的爆发，Schmidhuber似乎一直都没想明白，为什么世界没有给他想要的认可，以至于从15年到现在，他还经常在推特和博客上抨击三巨头。</p>
+          <p>这给我们留下了一个启示：如何才能最大程度地为人类发展做出贡献？答案可能是——<strong>做出简洁可复用的成果、清晰易懂的表达、保持心态开放并拥抱合作</strong>。<strong>人的价值，终归要体现在对他人的实际贡献之中。</strong></p>
+          <figure class="portrait">
+            <img src="images/hinton-portrait.jpg" width="500" height="570" alt="Geoffrey Hinton，第九届 BBVA 知识前沿奖信息与通信技术奖获得者" loading="lazy" decoding="async">
+          </figure>
+        </div>
+        <div class="post-end">
+          <a href="https://mp.weixin.qq.com/s/EJT9sgHMbe2BA7pxEy0wtQ" target="_blank" rel="noopener noreferrer">阅读公众号原文 ↗</a>
+          <a href="en.html" lang="en" hreflang="en">Read in English →</a>
+        </div>
+      </article>
+    </main>
+    <footer><span>颜简 Jian Yan</span><a href="../">← 全部文章</a></footer>
+  </div>
+</body>
+</html>
