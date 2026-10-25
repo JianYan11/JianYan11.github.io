@@ -90,3 +90,5 @@ footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 6
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+.blog-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 12px; font-size: 14px; font-weight: 600; }
