@@ -1,7 +1,4 @@
 .article-layout { max-width: 740px; margin: 0 auto; padding-top: 35px; }
-.article-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; font-size: 14px; }
-.language-switch { display: flex; gap: 18px; align-items: center; }
-.language-switch [aria-current="page"] { color: var(--ink); font-weight: 650; border-bottom: 2px solid var(--ink); }
 .article-header { padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
 .article-header h1 { font-size: clamp(27px, 4vw, 38px); line-height: 1.45; letter-spacing: -.025em; overflow-wrap: anywhere; }
 .article-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 22px; color: var(--muted); font-size: 13px; }
@@ -20,7 +17,6 @@
 .article-end > a { display: inline-block; margin-top: 14px; font-size: 14px; }
 @media (max-width: 650px) {
   .article-layout { padding-top: 24px; }
-  .article-tools { margin-bottom: 30px; }
   .article-header h1 { font-size: 27px; }
   .article-body { font-size: 16px; line-height: 1.9; }
   .article-body h2 { font-size: 21px; }

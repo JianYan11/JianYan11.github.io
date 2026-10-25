@@ -19,6 +19,7 @@
   <link rel="icon" href="../../images/favicon/favicon.ico">
   <link rel="stylesheet" href="../../stylesheet.css">
   <link rel="stylesheet" href="../blog.css">
+  <link rel="stylesheet" href="../navigation.css">
 </head>
 <body>
   <a class="skip-link" href="#main">跳转到正文</a>
@@ -33,7 +34,10 @@
       </nav>
     </header>
     <main class="blog-main" id="main">
-      <a class="back-link" href="../">← 全部文章</a>
+      <div class="article-tools">
+        <a href="../">← 全部文章</a>
+        <nav class="language-switch" aria-label="文章语言"><span lang="zh-CN" aria-current="page">中文</span><a href="en.html" lang="en" hreflang="en">English</a></nav>
+      </div>
       <article>
         <header class="post-header">
           <p class="eyebrow">深度学习 · 人物 · 个人笔记</p>
@@ -43,10 +47,6 @@
             <time datetime="2026-05-13T16:46:00+08:00">2026年5月13日</time>
             <a href="https://mp.weixin.qq.com/s/EJT9sgHMbe2BA7pxEy0wtQ" target="_blank" rel="noopener noreferrer">首发于「颜简的学习笔记」↗</a>
           </div>
-          <nav class="language-switch" aria-label="文章语言">
-            <a href="./" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a>
-            <a href="en.html" lang="en" hreflang="en">English</a>
-          </nav>
         </header>
         <div class="post-body">
           <p>在回顾深度学习的历史时，发现了一个屡屡出现，但此前却鲜有耳闻的名字——Jürgen <strong>Schmidhuber</strong>。他发明了LSTM，不仅先于Hinton（深度学习教父）、Ilya和Alex使用GPU训练<strong>深度卷积神经网络</strong>，还在何恺明（Kaiming He）之前大规模使用类似残差的结构，训练出了超过<strong>百层</strong>的神经网络。可是，为什么他没能成为像Hinton、何恺明那样被供奉在深度学习殿堂的教父级人物呢？</p>

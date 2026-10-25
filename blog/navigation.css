@@ -1,0 +1,11 @@
+.article-layout, .blog-main { padding-top: 35px; }
+.article-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 40px; font-size: 14px; }
+.language-switch { display: flex; align-items: center; gap: 18px; margin: 0; font-size: 14px; white-space: nowrap; }
+.language-switch [aria-current="page"] { color: var(--ink); font-weight: 650; border-bottom: 2px solid var(--ink); }
+@media (max-width: 650px) {
+  .article-layout, .blog-main { padding-top: 24px; }
+  .article-tools { margin-bottom: 30px; }
+}
+@media print {
+  .article-tools { display: none; }
+}
