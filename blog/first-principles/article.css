@@ -1,0 +1,11 @@
+.equation { margin: 30px 0; padding: 24px 16px; background: #f1f5f8; border-radius: 5px; color: var(--ink); overflow-x: auto; }
+.equation math { font-size: 1.45em; }
+.post-body var { color: var(--ink); }
+.paper-figure > a { display: block; background: white; border: 1px solid var(--line); border-radius: 5px; padding: 10px; }
+.post-body .paper-figure figcaption { text-align: left; }
+.figure-credit { display: block; margin-top: 6px; font-size: 12px; }
+@media (max-width: 650px) {
+  .equation { padding: 20px 10px; }
+  .equation math { font-size: 1.25em; }
+  .paper-figure > a { padding: 5px; }
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Two simple equations for understanding large language models: how prediction connects to compression, and how neural scaling laws describe improvements with scale.">
+  <meta name="author" content="Cris Yan">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="First Principles of Large Language Models">
+  <meta property="og:description" content="Building intuition about prediction, information compression, and neural scaling laws with two simple equations.">
+  <meta property="og:url" content="https://jianyan11.github.io/blog/first-principles/en.html">
+  <meta property="og:image" content="https://jianyan11.github.io/blog/first-principles/images/kaplan-scaling-laws.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-10-25">
+  <title>First Principles of Large Language Models · Jian Yan</title>
+  <link rel="canonical" href="https://jianyan11.github.io/blog/first-principles/en.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://jianyan11.github.io/blog/first-principles/">
+  <link rel="alternate" hreflang="en" href="https://jianyan11.github.io/blog/first-principles/en.html">
+  <link rel="icon" href="../../images/favicon/favicon.ico">
+  <link rel="stylesheet" href="../../stylesheet.css">
+  <link rel="stylesheet" href="../blog.css">
+  <link rel="stylesheet" href="article.css">
+  <link rel="stylesheet" href="../navigation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to article</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="site-name" href="../../">颜简 <span>Jian Yan</span></a>
+      <nav aria-label="Main navigation">
+        <a href="../../#about">About</a>
+        <a href="../../#research">Research</a>
+        <a href="../../#notes">Engineering Notes</a>
+        <a href="../">Blog</a>
+      </nav>
+    </header>
+    <main class="blog-main" id="main">
+      <div class="article-tools">
+        <a href="../">← All posts</a>
+        <nav class="language-switch" aria-label="Article language"><a href="./" lang="zh-CN" hreflang="zh-CN">中文</a><span lang="en" aria-current="page">English</span></nav>
+      </div>
+      <article>
+        <header class="post-header">
+          <p class="eyebrow">Deep Learning · Information Theory · Scaling Laws</p>
+          <h1>First Principles of Large Language Models</h1>
+          <div class="post-meta"><span>Cris Yan · Jian Yan</span><time datetime="2026-10-25">October 25, 2026</time></div>
+        </header>
+        <div class="post-body">
+          <p>Large language models may look complicated, but their basic training objective is straightforward: <strong>predict the next token from the preceding context.</strong> A token is, roughly speaking, a basic unit into which text is divided.</p>
+          <p>Starting from that objective, I think two questions are worth understanding: what does accurate prediction mean? And why do larger models, more data, and more compute usually make prediction more accurate?</p>
+          <p>Let’s start with the first question.</p>
+          <p>Suppose the next token that actually appears is “Beijing,” and the model assigns it a probability of <var>p</var>. The loss for this prediction is:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="ell equals minus log base two of p">
+              <mrow><mi>ℓ</mi><mo>=</mo><mo>−</mo><msub><mi mathvariant="normal">log</mi><mn>2</mn></msub><mo>&#x2061;</mo><mi>p</mi></mrow>
+            </math>
+          </div>
+          <p>The higher the probability assigned to the correct answer, the lower the loss. A probability of 1/2 gives a loss of 1; a probability of 1/8 gives a loss of 3. Training keeps adjusting the model so that the content that actually occurs receives a higher predicted probability.</p>
+          <p>This equation also connects to information theory: <strong>when we encode text using the model’s probabilities, prediction loss corresponds to the ideal code length.</strong></p>
+          <p>Predictable content takes fewer bits to describe. For example, ten thousand repetitions of “hello” can simply be described as “repeat hello ten thousand times.” Once we find the pattern, we no longer need to record every word. Patterns in language are more complex, but the same idea applies: the more accurately a model predicts text, the more effectively it can help us compress that text.</p>
+          <p>Learning patterns in language, improving prediction accuracy, and compressing information are therefore directly connected.</p>
+          <p>Now for the second question: how much can a model improve when we increase training resources?</p>
+          <p>In 2020, Kaplan and colleagues found stable relationships, across a substantial range of scales, between a language model’s prediction loss and its size, training data, and compute. These are known as <strong>neural scaling laws</strong>. <a href="https://arxiv.org/abs/2001.08361" target="_blank" rel="noopener noreferrer">Read the paper ↗</a></p>
+          <figure class="paper-figure">
+            <a href="images/kaplan-scaling-laws.png" target="_blank" rel="noopener noreferrer" aria-label="Open the high-resolution image of Figure 1 from Scaling Laws for Neural Language Models">
+              <img src="images/kaplan-scaling-laws.png" width="1574" height="490" alt="Figure 1 from Kaplan et al.: three panels showing test loss decreasing smoothly with compute, dataset size, and parameter count" loading="lazy" decoding="async">
+            </a>
+            <figcaption>When the other resources are not bottlenecks, increasing compute, data, or parameter count reduces loss along a relatively stable trend.
+              <span class="figure-credit">Source: Kaplan et al. (2020), <a href="https://arxiv.org/pdf/2001.08361#page=3" target="_blank" rel="noopener noreferrer"><cite>Scaling Laws for Neural Language Models</cite>, Figure 1</a>. Cropped from page 3; click the image to enlarge.</span>
+            </figcaption>
+          </figure>
+          <p>For data size, one common expression is:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="L of D equals L sub min plus A divided by D to the power alpha">
+              <mrow><mi>L</mi><mo stretchy="false">(</mo><mi>D</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>L</mi><mi mathvariant="normal">min</mi></msub><mo>+</mo><mfrac><mi>A</mi><msup><mi>D</mi><mi>α</mi></msup></mfrac></mrow>
+            </math>
+          </div>
+          <p>Here, <var>D</var> is the amount of training data, <var>L(D)</var> is the average prediction loss, and <var>L<sub>min</sub></var> is the loss floor the model approaches under the given conditions. <var>A</var> and <var>α</var> determine the shape of the curve and must be estimated through experiments.</p>
+          <p>The idea is simple: <strong>more data leads to lower loss, but further reductions in loss require progressively more data.</strong></p>
+          <p>What makes this useful is predictability. Researchers can train a set of small models, measure the trend, and estimate the results of scaling up. That helps them decide how many resources to invest.</p>
+          <p>Model size, data, and compute also need to grow together. The Chinchilla study showed that, under the conditions it investigated, increasing model parameters should be accompanied by more training data to use compute more efficiently. A model with a large capacity needs enough training to make use of it. <a href="https://arxiv.org/abs/2203.15556" target="_blank" rel="noopener noreferrer">Read the paper ↗</a></p>
+          <figure class="paper-figure">
+            <a href="images/chinchilla-isoflop.png" target="_blank" rel="noopener noreferrer" aria-label="Open the high-resolution image of Figure 3 from the Chinchilla paper">
+              <img src="images/chinchilla-isoflop.png" width="1515" height="450" alt="Figure 3 from the Chinchilla paper: U-shaped loss curves at fixed compute budgets on the left, with predicted optimal model sizes and training token counts in the center and right panels" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Each curve on the left represents a fixed compute budget; its lowest point identifies a better model size for that budget. The center and right panels use these minima to estimate optimal parameter counts and training data sizes at different budgets.
+              <span class="figure-credit">Source: Hoffmann et al. (2022), <a href="https://arxiv.org/pdf/2203.15556#page=6" target="_blank" rel="noopener noreferrer"><cite>Training Compute-Optimal Large Language Models</cite>, Figure 3</a>. Cropped from page 6; click the image to enlarge.</span>
+            </figcaption>
+          </figure>
+          <p>The two equations play different roles. The first directly connects prediction to information encoding; the second summarizes scaling patterns observed in experiments. Information theory helps us understand what the model is optimizing, while scaling laws help us estimate how much improvement a larger investment can deliver.</p>
+          <p>For me, this offers a starting point for understanding large language models: <strong>models learn patterns from data and use those patterns to reduce uncertainty in prediction. More resources take that process further; better methods may let the same resources learn more.</strong></p>
+          <p>Experiments can tell us how far prediction loss can fall. How much that improvement translates into reasoning, programming, or solving practical problems still needs to be evaluated separately.</p>
+        </div>
+        <div class="post-end"><a href="../">← All posts</a><a href="./" lang="zh-CN" hreflang="zh-CN">阅读中文版 →</a></div>
+      </article>
+    </main>
+    <footer><span>Jian Yan · 颜简</span><a href="../">← All posts</a></footer>
+  </div>
+</body>
+</html>
